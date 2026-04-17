@@ -28,7 +28,7 @@ Duprado Studio/
 ├── .github/workflows/
 │   └── deploy.yml          ← CI/CD automático para GitHub Pages
 │
-├── CNAME                   ← Domínio custom (dupradostudio.com)
+├── CNAME                   ← Domínio custom (duprado.com)
 ├── .gitignore
 └── README.md
 ```
@@ -84,9 +84,9 @@ git push -u origin main
 3. O workflow `.github/workflows/deploy.yml` publica automaticamente a cada push na `main`.
 4. Em ~1 minuto, o site estará no ar em `https://SEU-USUARIO.github.io/dupradostudio-site/` ou no domínio custom.
 
-### 3.3 Domínio custom (dupradostudio.com)
+### 3.3 Domínio custom (duprado.com)
 
-O arquivo `CNAME` já está com `dupradostudio.com`. Para funcionar:
+O arquivo `CNAME` já está com `duprado.com`. Para funcionar:
 
 **No provedor DNS do domínio** (GoDaddy, Namecheap, Cloudflare, etc.) adicione:
 
@@ -98,7 +98,7 @@ O arquivo `CNAME` já está com `dupradostudio.com`. Para funcionar:
 | A | @ | `185.199.111.153` |
 | CNAME | www | `SEU-USUARIO.github.io` |
 
-No GitHub: **Settings → Pages → Custom domain**, insira `dupradostudio.com`, marque **Enforce HTTPS** (leva ~1h para o SSL propagar).
+No GitHub: **Settings → Pages → Custom domain**, insira `duprado.com`, marque **Enforce HTTPS** (leva ~1h para o SSL propagar).
 
 Se ainda não tiver o domínio, **apague o arquivo CNAME** e o site funciona no `github.io` normalmente.
 
@@ -140,7 +140,7 @@ Hoje o form usa `mailto:` (abre cliente de email). Para produção **real**, int
 Troque o `action` do `<form>` em `contato.html` pelo endpoint do serviço escolhido.
 
 ### Email do Duprado
-Todos os `contato@dupradostudio.com` e `@antonioduprado` estão espalhados nos 5 HTMLs. Se mudar, use Find & Replace.
+Todos os `contato@duprado.com` e `@antonioduprado` estão espalhados nos 5 HTMLs. Se mudar, use Find & Replace.
 
 ---
 
@@ -171,6 +171,6 @@ Sem build step. Sem node_modules. Edita um arquivo, salva, publica.
 
 ## 8. Contato do desenvolvimento
 
-Dúvidas ou ajustes: contato@dupradostudio.com
+Dúvidas ou ajustes: contato@duprado.com
 
 © 2026 Duprado Studio. Desenhado &amp; dirigido no Porto.
