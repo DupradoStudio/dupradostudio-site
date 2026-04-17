@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato — Duprado Studio</title>
+    <meta name="description" content="Contato direto com o Duprado Studio. Briefing, orçamento e início de projeto. Porto, Portugal — atendimento global.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Contato — Duprado Studio">
+    <meta property="og:description" content="Briefing, orçamento e início de projeto. Resposta em 24h.">
+    <meta property="og:image" content="/assets/images/og-image.svg">
+    <meta property="og:url" content="https://dupradostudio.com/contato.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23000'/%3E%3Ctext x='50' y='68' font-family='Arial Narrow, sans-serif' font-size='60' font-weight='900' text-anchor='middle' fill='%23fff'%3ED%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="cursor" id="cursor"><span class="cursor__label" id="cursor-label"></span></div>
+
+<header class="nav">
+    <a href="/" class="nav__logo">Duprado <em>Studio</em></a>
+    <nav>
+        <ul class="nav__links">
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="manifesto.html">Manifesto</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+    </nav>
+    <a href="mailto:contato@dupradostudio.com" class="nav__cta">Email direto →</a>
+    <button class="nav__toggle" id="menu-toggle" aria-label="Abrir menu"><span></span><span></span> Menu</button>
+</header>
+
+<div class="menu" id="menu" aria-hidden="true">
+    <div class="menu__head">
+        <span class="mono">Menu / Navegação</span>
+        <button class="menu__close" id="menu-close" aria-label="Fechar menu">Fechar ✕</button>
+    </div>
+    <ul class="menu__list">
+        <li><a href="/">Início</a></li>
+        <li><a href="servicos.html">Serviços</a></li>
+        <li><a href="manifesto.html">Manifesto</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html">Contato</a></li>
+    </ul>
+    <div class="menu__foot">
+        <div>
+            <div>Porto, Portugal</div>
+            <a href="mailto:contato@dupradostudio.com">contato@dupradostudio.com</a>
+        </div>
+        <div>
+            <a href="https://instagram.com/antonioduprado" target="_blank" rel="noopener">Instagram</a>
+            <div>© 2026 Duprado Studio</div>
+        </div>
+    </div>
+</div>
+
+<!-- Page Hero -->
+<section class="page-hero">
+    <div class="page-hero__meta">
+        <span>S / Contato</span>
+        <span>Resposta em 24h</span>
+    </div>
+    <h1 class="page-hero__title" data-reveal-lines>
+        <span class="line"><span style="--i:0">Iniciar</span></span>
+        <span class="line"><span style="--i:1">um <em class="subtle" style="font-style: normal;">projeto</em>.</span></span>
+    </h1>
+    <p class="page-hero__sub" data-reveal>Quanto mais preciso o briefing, melhor a resposta. Conte sobre o negócio, o objetivo e o escopo — mesmo que ainda em rascunho.</p>
+</section>
+
+<!-- Contact Grid -->
+<section class="container">
+    <div class="grid" style="align-items: flex-start;">
+
+        <!-- Form -->
+        <div class="span-7">
+            <div class="mono subtle mb-md">Briefing / Formulário</div>
+            <form class="form" id="contact-form" action="mailto:contato@dupradostudio.com" method="post" enctype="text/plain">
+                <div class="form__row">
+                    <div class="form__field">
+                        <label for="nome">Nome completo *</label>
+                        <input type="text" id="nome" name="nome" required placeholder="Antonio Duprado">
+                    </div>
+                    <div class="form__field">
+                        <label for="empresa">Empresa / Marca</label>
+                        <input type="text" id="empresa" name="empresa" placeholder="Duprado Studio">
+                    </div>
+                </div>
+
+                <div class="form__row">
+                    <div class="form__field">
+                        <label for="email">E-mail *</label>
+                        <input type="email" id="email" name="email" required placeholder="voce@empresa.com">
+                    </div>
+                    <div class="form__field">
+                        <label for="whatsapp">WhatsApp / Telefone</label>
+                        <input type="tel" id="whatsapp" name="whatsapp" placeholder="+351 000 000 000">
+                    </div>
+                </div>
+
+                <div class="form__field">
+                    <label for="servico">Serviço de interesse *</label>
+                    <select id="servico" name="servico" required>
+                        <option value="">Selecione...</option>
+                        <option>01 · Produção audiovisual</option>
+                        <option>02 · Estratégia de conteúdo</option>
+                        <option>03 · Fotografia profissional</option>
+                        <option>04 · Identidade &amp; design</option>
+                        <option>05 · Gestão de redes sociais</option>
+                        <option>06 · Consultoria executiva</option>
+                        <option>07 · Combinado / Não sei ainda</option>
+                    </select>
+                </div>
+
+                <div class="form__row">
+                    <div class="form__field">
+                        <label for="orcamento">Orçamento estimado</label>
+                        <select id="orcamento" name="orcamento">
+                            <option value="">Selecione...</option>
+                            <option>Até €1.000</option>
+                            <option>€1.000 – €5.000</option>
+                            <option>€5.000 – €15.000</option>
+                            <option>€15.000 – €50.000</option>
+                            <option>Acima de €50.000</option>
+                            <option>Em definição</option>
+                        </select>
+                    </div>
+                    <div class="form__field">
+                        <label for="prazo">Prazo desejado</label>
+                        <select id="prazo" name="prazo">
+                            <option value="">Selecione...</option>
+                            <option>Até 1 mês</option>
+                            <option>1 – 3 meses</option>
+                            <option>3 – 6 meses</option>
+                            <option>Acima de 6 meses</option>
+                            <option>Flexível</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form__field">
+                    <label for="mensagem">Sobre o projeto *</label>
+                    <textarea id="mensagem" name="mensagem" rows="5" required placeholder="Conte sobre o negócio, o objetivo e o escopo desejado."></textarea>
+                </div>
+
+                <div class="flex items-center gap-md" style="flex-wrap: wrap; margin-top: var(--sp-3);">
+                    <button type="submit" class="btn btn--solid btn--lg">Enviar briefing →</button>
+                    <span class="mono-xs subtle">Ao enviar, você concorda com nossa política de privacidade.</span>
+                </div>
+            </form>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="span-5" style="padding-left: var(--sp-7); border-left: 1px solid var(--border); position: sticky; top: var(--sp-9);">
+            <div class="mono subtle mb-md">Contato direto</div>
+
+            <div style="margin-bottom: var(--sp-6);">
+                <h6 class="mono-xs subtle mb-xs">E-mail</h6>
+                <a href="mailto:contato@dupradostudio.com" style="font-family: var(--font-display); font-size: var(--fs-h5); text-transform: uppercase; line-height: 1;">contato@dupradostudio.com</a>
+            </div>
+
+            <div style="margin-bottom: var(--sp-6);">
+                <h6 class="mono-xs subtle mb-xs">Instagram</h6>
+                <a href="https://instagram.com/antonioduprado" target="_blank" rel="noopener" style="font-family: var(--font-display); font-size: var(--fs-h5); text-transform: uppercase; line-height: 1;">@antonioduprado</a>
+            </div>
+
+            <div style="margin-bottom: var(--sp-6);">
+                <h6 class="mono-xs subtle mb-xs">Base</h6>
+                <p style="font-family: var(--font-display); font-size: var(--fs-h5); text-transform: uppercase; line-height: 1;">Porto, Portugal</p>
+                <p class="muted mt-xs">Atendimento global — PT, BR, EN, ES.</p>
+            </div>
+
+            <div style="padding: var(--sp-5); background: var(--color-grey-soft); border-radius: var(--radius-md);">
+                <h6 class="mono-xs mb-sm">Tempo de resposta</h6>
+                <p>Respondemos em até <strong>24h úteis</strong>. Para urgências, envie WhatsApp direto no Instagram.</p>
+            </div>
+
+            <div style="margin-top: var(--sp-5);">
+                <h6 class="mono-xs subtle mb-sm">Horário</h6>
+                <p>Segunda a sexta · 09:00 – 19:00 WET</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- What to expect -->
+<section class="container">
+    <div class="featured__header">
+        <div>
+            <div class="mono mb-sm subtle">S / Próximos passos</div>
+            <h2 class="featured__title" data-reveal>O que acontece depois que você envia.</h2>
+        </div>
+    </div>
+
+    <div class="grid" data-reveal>
+        <div class="span-4" style="padding: var(--sp-6); border-top: 2px solid var(--fg);">
+            <div class="mono subtle">Etapa 01 · 24h</div>
+            <h3 class="h5 mt-sm">Resposta</h3>
+            <p class="muted mt-sm">Leitura atenta do briefing. Primeira resposta com perguntas específicas (se houver) e agenda para diagnóstico.</p>
+        </div>
+        <div class="span-4" style="padding: var(--sp-6); border-top: 2px solid var(--fg);">
+            <div class="mono subtle">Etapa 02 · 48–72h</div>
+            <h3 class="h5 mt-sm">Diagnóstico</h3>
+            <p class="muted mt-sm">Reunião de 45–60 minutos (presencial ou online). Alinhamento de objetivo, escopo, prazo e investimento.</p>
+        </div>
+        <div class="span-4" style="padding: var(--sp-6); border-top: 2px solid var(--fg);">
+            <div class="mono subtle">Etapa 03 · 5 dias</div>
+            <h3 class="h5 mt-sm">Proposta</h3>
+            <p class="muted mt-sm">Proposta detalhada com cronograma, entregas e investimento. Contrato enviado após aprovação.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+    <div class="container">
+        <div class="cta__sub">[ Ou envie direto ]</div>
+        <h2 class="cta__title" data-reveal>Prefere <em class="subtle" style="color: var(--color-grey-mid); font-style: normal;">e-mail</em>?</h2>
+        <a href="mailto:contato@dupradostudio.com" class="btn btn--lg">contato@dupradostudio.com →</a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer__big">DUPRADO</div>
+        <div class="footer__grid">
+            <div class="footer__col">
+                <h6>Estúdio</h6>
+                <p>Duprado Studio é um estúdio audiovisual e estratégico. Trabalhamos para marcas, empresas e criadores que entendem que estética sem estratégia é decoração.</p>
+            </div>
+            <div class="footer__col">
+                <h6>Navegação</h6>
+                <a href="/">Início</a>
+                <a href="servicos.html">Serviços</a>
+                <a href="manifesto.html">Manifesto</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="contato.html">Contato</a>
+            </div>
+            <div class="footer__col">
+                <h6>Contato</h6>
+                <a href="mailto:contato@dupradostudio.com">contato@<br>dupradostudio.com</a>
+                <a href="https://instagram.com/antonioduprado" target="_blank" rel="noopener">@antonioduprado</a>
+                <p>Porto, Portugal</p>
+            </div>
+            <div class="footer__col">
+                <h6>Horário</h6>
+                <p>Seg – Sex<br>09:00 – 19:00 WET</p>
+                <p>Resposta em até 24h</p>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div>© 2026 Duprado Studio. Todos os direitos reservados.</div>
+            <div>Desenhado &amp; dirigido no Porto.</div>
+        </div>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
