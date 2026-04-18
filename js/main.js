@@ -1,44 +1,10 @@
 /* =============================================================
    DUPRADO STUDIO — Interactions
-   Lenis smooth scroll · Custom cursor · Fullscreen menu · Reveals · FAQ
+   Scroll nativo · Custom cursor · Fullscreen menu · Reveals · FAQ
    ============================================================= */
 
 (function () {
     'use strict';
-
-    /* ----------  LENIS SMOOTH SCROLL ---------- */
-    let lenis;
-    function initLenis() {
-        if (typeof window.Lenis === 'undefined') return;
-        lenis = new window.Lenis({
-            lerp: 0.12,            // responsividade (mais alto = mais rápido); v2-style
-            duration: 0.6,         // fallback p/ versões que usam duration
-            easing: function (t) { return 1 - Math.pow(1 - t, 3); }, // easeOutCubic — leve, rápido
-            wheelMultiplier: 1.1,  // aceita o "delta" do scroll com leve boost
-            smoothWheel: true,
-            smoothTouch: false
-        });
-
-        function raf(time) {
-            lenis.raf(time);
-            requestAnimationFrame(raf);
-        }
-        requestAnimationFrame(raf);
-
-        // Anchor smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(function (a) {
-            a.addEventListener('click', function (e) {
-                const target = a.getAttribute('href');
-                if (target.length > 1) {
-                    const el = document.querySelector(target);
-                    if (el) {
-                        e.preventDefault();
-                        lenis.scrollTo(el, { offset: -40, duration: 0.8 });
-                    }
-                }
-            });
-        });
-    }
 
     /* ----------  CUSTOM CURSOR ---------- */
     function initCursor() {
@@ -117,14 +83,12 @@
             menu.classList.add('is-open');
             menu.setAttribute('aria-hidden', 'false');
             document.body.style.overflow = 'hidden';
-            if (lenis) lenis.stop();
         }
 
         function closeFn() {
             menu.classList.remove('is-open');
             menu.setAttribute('aria-hidden', 'true');
             document.body.style.overflow = '';
-            if (lenis) lenis.start();
         }
 
         if (toggle) toggle.addEventListener('click', open);
@@ -211,12 +175,6 @@
     }
 
     ready(function () {
-        // Load Lenis from CDN
-        const lenisScript = document.createElement('script');
-        lenisScript.src = 'https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js';
-        lenisScript.onload = initLenis;
-        document.head.appendChild(lenisScript);
-
         initPreloader();
         initCursor();
         initMenu();
