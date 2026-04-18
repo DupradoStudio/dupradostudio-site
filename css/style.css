@@ -212,7 +212,7 @@ p { max-width: 65ch; }
 
 section { padding-block: var(--sp-10); position: relative; }
 section.tight { padding-block: var(--sp-8); }
-section.hero-section { padding-block: 0; }
+section.hero-section { padding-block: clamp(6rem, 12vh, 9rem) var(--sp-8); } /* espaço p/ nav fixo no topo */
 
 .grid {
     display: grid;

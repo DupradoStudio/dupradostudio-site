@@ -11,8 +11,10 @@
     function initLenis() {
         if (typeof window.Lenis === 'undefined') return;
         lenis = new window.Lenis({
-            duration: 1.1,
-            easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); },
+            lerp: 0.12,            // responsividade (mais alto = mais rápido); v2-style
+            duration: 0.6,         // fallback p/ versões que usam duration
+            easing: function (t) { return 1 - Math.pow(1 - t, 3); }, // easeOutCubic — leve, rápido
+            wheelMultiplier: 1.1,  // aceita o "delta" do scroll com leve boost
             smoothWheel: true,
             smoothTouch: false
         });
@@ -31,7 +33,7 @@
                     const el = document.querySelector(target);
                     if (el) {
                         e.preventDefault();
-                        lenis.scrollTo(el, { offset: -40, duration: 1.4 });
+                        lenis.scrollTo(el, { offset: -40, duration: 0.8 });
                     }
                 }
             });
