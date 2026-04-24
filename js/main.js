@@ -168,6 +168,73 @@
         });
     }
 
+    /* ----------  CONTACT FORM (Formspree AJAX) ---------- */
+    function initContactForm() {
+        const form = document.getElementById('contact-form');
+        if (!form) return;
+
+        const status = document.getElementById('contact-status');
+        const submit = document.getElementById('contact-submit');
+        const originalBtnText = submit ? submit.textContent : '';
+
+        function setStatus(state, message) {
+            if (!status) return;
+            status.className = 'form__status is-' + state;
+            status.textContent = message;
+        }
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Honeypot — se preenchido, é bot
+            const honey = form.querySelector('[name="_gotcha"]');
+            if (honey && honey.value) {
+                setStatus('success', 'Mensagem recebida. Retornaremos em até 24h.');
+                form.reset();
+                return;
+            }
+
+            const action = form.getAttribute('action') || '';
+            if (action.indexOf('SEU_FORM_ID') !== -1) {
+                setStatus('error', 'Formulário ainda não configurado. Use antonio@duprado.com diretamente enquanto isso.');
+                return;
+            }
+
+            if (submit) {
+                submit.disabled = true;
+                submit.textContent = 'Enviando...';
+            }
+            setStatus('loading', 'Enviando briefing...');
+
+            fetch(action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            }).then(function (response) {
+                if (response.ok) {
+                    setStatus('success', 'Briefing enviado. Retornamos em até 24h no e-mail informado.');
+                    form.reset();
+                } else {
+                    response.json().then(function (data) {
+                        const msg = (data && data.errors && data.errors.length)
+                            ? data.errors.map(function (er) { return er.message; }).join(', ')
+                            : 'Erro ao enviar. Tente novamente ou escreva direto para antonio@duprado.com.';
+                        setStatus('error', msg);
+                    }).catch(function () {
+                        setStatus('error', 'Erro ao enviar. Tente novamente ou escreva direto para antonio@duprado.com.');
+                    });
+                }
+            }).catch(function () {
+                setStatus('error', 'Erro de conexão. Verifique sua internet ou escreva direto para antonio@duprado.com.');
+            }).finally(function () {
+                if (submit) {
+                    submit.disabled = false;
+                    submit.textContent = originalBtnText;
+                }
+            });
+        });
+    }
+
     /* ----------  INIT ---------- */
     function ready(fn) {
         if (document.readyState !== 'loading') fn();
@@ -182,6 +249,7 @@
         initFaq();
         initMagnetic();
         initNav();
+        initContactForm();
     });
 
 })();

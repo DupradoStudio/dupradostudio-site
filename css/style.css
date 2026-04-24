@@ -985,6 +985,40 @@ section.hero-section { padding-block: clamp(6rem, 12vh, 9rem) var(--sp-8); } /* 
 }
 .form__field textarea { resize: vertical; min-height: 120px; }
 
+/* Form status feedback (AJAX submit) */
+.form__status {
+    margin-top: var(--sp-4);
+    padding: var(--sp-3) var(--sp-4);
+    font-family: var(--font-mono, monospace);
+    font-size: 0.85rem;
+    line-height: 1.45;
+    border-left: 2px solid transparent;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.25s ease, max-height 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+}
+.form__status.is-loading,
+.form__status.is-success,
+.form__status.is-error {
+    opacity: 1;
+    max-height: 200px;
+}
+.form__status.is-loading {
+    border-color: var(--fg-muted, #888);
+    color: var(--fg-muted, #888);
+}
+.form__status.is-success {
+    border-color: #1a8c4f;
+    color: #1a8c4f;
+    background: rgba(26, 140, 79, 0.04);
+}
+.form__status.is-error {
+    border-color: #c73e3e;
+    color: #c73e3e;
+    background: rgba(199, 62, 62, 0.04);
+}
+
 @media (max-width: 700px) { .form__row { grid-template-columns: 1fr; } }
 
 /* Logo mark / placeholder ----------------------------------- */

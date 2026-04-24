@@ -79,7 +79,11 @@
         <!-- Form -->
         <div class="span-7">
             <div class="mono subtle mb-md">Briefing / Formulário</div>
-            <form class="form" id="contact-form" action="mailto:antonio@duprado.com" method="post" enctype="text/plain">
+            <form class="form" id="contact-form" action="https://formspree.io/f/SEU_FORM_ID" method="POST">
+                <!-- Honeypot anti-spam (campo invisível, bots preenchem) -->
+                <input type="text" name="_gotcha" style="display:none !important" tabindex="-1" autocomplete="off">
+                <!-- Assunto e reply-to dinâmicos -->
+                <input type="hidden" name="_subject" value="Novo briefing — Duprado Studio">
                 <div class="form__row">
                     <div class="form__field">
                         <label for="nome">Nome completo *</label>
@@ -148,9 +152,12 @@
                 </div>
 
                 <div class="flex items-center gap-md" style="flex-wrap: wrap; margin-top: var(--sp-3);">
-                    <button type="submit" class="btn btn--solid btn--lg">Enviar briefing →</button>
+                    <button type="submit" class="btn btn--solid btn--lg" id="contact-submit">Enviar briefing →</button>
                     <span class="mono-xs subtle">Ao enviar, você concorda com nossa política de privacidade.</span>
                 </div>
+
+                <!-- Status feedback inline -->
+                <div id="contact-status" class="form__status" role="status" aria-live="polite"></div>
             </form>
         </div>
 
